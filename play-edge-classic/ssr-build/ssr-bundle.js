@@ -78,7 +78,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "./";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -1556,10 +1556,10 @@ var header_Header = function Header() {
       maxWidth: "1440px"
     }
   }, Object(external_preact_["h"])("a", {
-    href: "/",
+    href: "./",
     class: style.logo
   }, Object(external_preact_["h"])("img", {
-    src: "../../assets/eclogo.png",
+    src: "./assets/eclogo.png",
     height: "48px"
   })), Object(external_preact_["h"])("nav", null, Object(external_preact_["h"])("div", {
     style: {
@@ -1574,13 +1574,13 @@ var header_Header = function Header() {
     href: "https://discord.gg/jUhEKHGWZm",
     target: "_blank"
   }, Object(external_preact_["h"])("img", {
-    src: "../../assets/discord-mark-white.svg",
+    src: "./assets/discord-mark-white.svg",
     height: "32px"
   })), Object(external_preact_["h"])("a", {
     href: "https://github.com/edge-classic/EDGE-classic",
     target: "_blank"
   }, Object(external_preact_["h"])("img", {
-    src: "../../assets/github-mark-white.svg",
+    src: "./assets/github-mark-white.svg",
     height: "32px"
   }))))));
 };
@@ -2505,15 +2505,15 @@ var player_WadHandler = /*#__PURE__*/function () {
 _defineProperty(player_WadHandler, "instance", void 0);
 var projects = [{
   name: "Operation: Arctic Wolf Revisited",
-  image: "../../assets/images/articwolf.png",
+  image: "./assets/images/articwolf.png",
   link: "https://www.moddb.com/mods/edge-classic-add-ons/downloads/arctic-wolf-revisited"
 }, {
   name: "Astral Pathfinder",
-  image: "../../assets/images/astralpathfinder.png",
+  image: "./assets/images/astralpathfinder.png",
   link: "https://www.moddb.com/mods/edge-classic-add-ons/downloads/astral-pathfinder1"
 }, {
   name: "Aliens: Stranded",
-  image: "../../assets/images/aliensstranded.png",
+  image: "./assets/images/aliensstranded.png",
   link: "https://www.moddb.com/mods/edge-classic-add-ons/downloads/aliens-stranded"
 }];
 var player_WadChooser = function WadChooser() {
@@ -2554,6 +2554,7 @@ var player_WadChooser = function WadChooser() {
     style: {
       display: "flex",
       width: "100%",
+      maxHeight: "1080px",
       padding: 24,
       paddingLeft: 42
     }
