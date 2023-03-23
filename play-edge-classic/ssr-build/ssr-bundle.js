@@ -2555,7 +2555,7 @@ var player_WadChooser = function WadChooser() {
         width: "100%"
       }
     }, Object(external_preact_["h"])("img", {
-      style: "width:100%;height:100%; object-fit:cover;position:scale-down;top:0;left:0",
+      style: "width:100%;height:100%;object-fit:cover;position:absolute",
       src: p.image
     })));
   });
@@ -2680,19 +2680,22 @@ var player_EdgeClassic = function EdgeClassic() {
   hooks_module_p(function () {
     var wadName = wadState.wadName;
     var canvas = document.querySelector('#canvas');
+    var canvasContainer = document.querySelector('#canvas-container');
     if (!canvas) {
       throw "Unable to get canvas";
     }
     var setCanvasSize = function setCanvasSize(c, w, h) {
+      w = Math.floor(w);
+      h = Math.floor(h);
+      console.log("Setting canvas size", w, h);
       c.style.width = "".concat(w, "px");
       c.style.height = "".concat(h, "px");
       c.width = w;
       c.height = h;
     };
 
-    // initial update
-    console.log("Initial canvas", Math.ceil(canvas.offsetWidth), Math.ceil(canvas.offsetHeight));
-    setCanvasSize(canvas, canvas.offsetWidth, canvas.offsetHeight);
+    // initial update		
+    setCanvasSize(canvas, canvasContainer.offsetWidth, canvasContainer.offsetHeight);
     var canvasSync = function canvasSync() {
       var c = document.querySelector('#canvas');
       var container = document.querySelector('#canvas-container');
@@ -2701,7 +2704,6 @@ var player_EdgeClassic = function EdgeClassic() {
     };
     var pointerLockChange = function pointerLockChange() {
       var lock = document.querySelector('#canvas') === document.pointerLockElement;
-      console.log("pointer lock change", lock);
       Module._I_WebSetFullscreen(lock ? 1 : 0);
       if (!lock) {
         Module._I_WebOpenGameMenu(1);
@@ -2788,13 +2790,12 @@ var player_EdgeClassic = function EdgeClassic() {
     style: {
       display: "flex",
       width: "100%",
+      height: "100%",
       position: "relative"
     }
   }, Object(external_preact_["h"])("canvas", {
     id: "canvas",
     style: {
-      display: "block",
-      width: "100%",
       visibility: state.loading ? "hidden" : "visible"
     }
   }), !!state.loading && Object(external_preact_["h"])("div", {
