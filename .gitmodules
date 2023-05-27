@@ -2,3 +2,6 @@
 	path = edge-classic-site
 	url = https://github.com/pbdot/edge-classic-site
 	branch = web_player
+[submodule "edge-classic-site-webplayer"]
+	path = edge-classic-site-webplayer
+	url = https://github.com/pbdot/edge-classic-site-webplayer
