@@ -5,3 +5,6 @@
 [submodule "edge-classic-site-webplayer"]
 	path = edge-classic-site-webplayer
 	url = https://github.com/pbdot/edge-classic-site-webplayer
+[submodule "pack_files"]
+	path = pack_files
+	url = https://github.com/pbdot/pack_files
